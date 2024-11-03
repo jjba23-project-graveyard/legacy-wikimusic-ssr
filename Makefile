@@ -9,7 +9,8 @@ ghcid-dev:
 	ghcid --warnings --restart=./wikimusic-ssr.cabal --test "WikiMusic.SSR.Boot.boot"
 dev: fmt
 	make ghcid-dev
-
+server:
+	stack --nix run -- "./resources/config/run-production.toml"
 # watchexec -r -e css "make ghcid-dev" ?????
 test:
 	nix run .#test
