@@ -9,6 +9,7 @@ request-headers = [ "content-type", "access-control-allow-origin", "cookie" ]
 
 [web-frontend]
 base-url = "http://127.0.0.1:6923"
+static-file-dir = "/home/joe/Ontwikkeling/Persoonlijk/wikimusic-ssr/resources/static"
 
 [dev]
 reported-version = "dev"

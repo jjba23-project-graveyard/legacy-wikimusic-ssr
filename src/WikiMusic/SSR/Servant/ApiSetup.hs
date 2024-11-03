@@ -139,6 +139,12 @@ userRoutes env =
   inviteUsersRoute env
     :<|> inviteUsersFormRoute env
 
+staticFilesRoute :: Env -> Server StaticFilesRoute
+staticFilesRoute env =
+  serveDirectoryFileServer
+    . unpackText
+    $ (env ^. #cfg % #webFrontend % #staticFileDir)
+
 server :: Env -> Server WikiMusicSSRServant
 server env =
   fallbackRoute
@@ -152,6 +158,7 @@ server env =
     :<|> errorRoute env
     :<|> passwordRoutes env
     :<|> userRoutes env
+    :<|> staticFilesRoute env
 
 fallbackRoute :: Handler a
 fallbackRoute =

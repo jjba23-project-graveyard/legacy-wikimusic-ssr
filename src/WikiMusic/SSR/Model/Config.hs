@@ -80,8 +80,9 @@ newtype DevConfig = DevConfig
 devCodec :: TomlCodec DevConfig
 devCodec = DevConfig <$> Toml.text "reported-version" .= (^. #reportedVersion)
 
-newtype WebFrontendConfig = WebFrontendConfig
-  { baseUrl :: Text
+data WebFrontendConfig = WebFrontendConfig
+  { baseUrl :: Text,
+    staticFileDir :: Text
   }
   deriving (Generic, Eq, Show)
 
@@ -90,6 +91,8 @@ webFrontendConfigCodec =
   WebFrontendConfig
     <$> Toml.text "base-url"
     .= (^. #baseUrl)
+    <*> Toml.text "static-file-dir"
+    .= (^. #staticFileDir)
 
 data ApiConfig = ApiConfig
   { host :: Text,

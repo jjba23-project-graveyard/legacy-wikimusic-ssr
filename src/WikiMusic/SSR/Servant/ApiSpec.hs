@@ -23,6 +23,7 @@ type WikiMusicSSRServant =
     :<|> "error" :> ErrorRoute
     :<|> "passwords" :> PasswordRoutes
     :<|> "users" :> UserRoutes
+    :<|> StaticFilesRoute
 
 type PasswordRoutes =
   "request-reset" :> WithCookie :> HtmlDoc
@@ -101,3 +102,5 @@ type LoginRoutes = WithCookie :> HtmlDoc :<|> PostDataForm
 type WithEntityIdentifier = Capture "identifier" UUID
 
 type ErrorRoute = WithCookie :> WithReferer :> QueryParam "code" Int :> QueryParam "message" Text :> HtmlDoc
+
+type StaticFilesRoute = "static" :> Raw

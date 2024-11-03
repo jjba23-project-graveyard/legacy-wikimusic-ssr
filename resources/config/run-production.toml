@@ -9,6 +9,7 @@ request-headers = [ "content-type", "access-control-allow-origin", "cookie" ]
 
 [web-frontend]
 base-url = "https://wikimusic.jointhefreeworld.org"
+static-file-dir = "/var/log/byggsteg/job-clone/wikimusic-ssr/trunk/resources/static"
 
 [dev]
 reported-version = "prod"
