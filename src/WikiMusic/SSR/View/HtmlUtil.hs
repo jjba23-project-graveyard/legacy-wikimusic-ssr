@@ -30,6 +30,11 @@ mkSharedHead _ _ pageTitle = do
       $ [trimming|
         @import url('https://fonts.cdnfonts.com/css/liberation-sans');
         @import url('https://fonts.cdnfonts.com/css/liberation-serif');
+        @font-face {
+          font-family: "Intel One Mono";
+          src: url(/static/ttf/IntelOneMono-Regular.ttf);
+          font-weight: regular;
+        }
         |]
     H.script ! src "https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries" $ ""
     H.script
