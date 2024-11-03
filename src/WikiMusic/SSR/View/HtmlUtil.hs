@@ -28,7 +28,8 @@ mkSharedHead _ _ pageTitle = do
     H.style
       . text
       $ [trimming|
-                 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/liberation-sans');
+        @import url('https://fonts.cdnfonts.com/css/liberation-serif');
         |]
     H.script ! src "https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries" $ ""
     H.script
@@ -38,9 +39,9 @@ mkSharedHead _ _ pageTitle = do
         theme: {
           container: { center: true },
           fontFamily: {
-            sans: ['Roboto Condensed', 'sans-serif'],
-            serif: ['Roboto Slabe', 'serif'],
-            mono: ['Roboto Mono', 'monospace']
+            sans: ['Liberation Sans', 'sans-serif'],
+            serif: ['Liberation Serif', 'serif'],
+            mono: ['Intel One Mono', 'monospace']
           },
         }
       }                              
