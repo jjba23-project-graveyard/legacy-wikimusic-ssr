@@ -3,7 +3,7 @@ port = 6923
 host = "127.0.0.1"
 
 [cors]
-origins = [ "https://wikimusic.jointhefreeworld.org"  "https://www.wikimusic.jointhefreeworld.org" ]
+origins = [ "https://wikimusic.jointhefreeworld.org", "https://www.wikimusic.jointhefreeworld.org" ]
 methods = [ "OPTIONS", "HEAD", "POST", "GET" ]
 request-headers = [ "content-type", "access-control-allow-origin", "cookie" ]
 
