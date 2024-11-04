@@ -30,11 +30,62 @@ mkSharedHead _ _ pageTitle = do
       $ [trimming|
         @import url('https://fonts.cdnfonts.com/css/liberation-sans');
         @import url('https://fonts.cdnfonts.com/css/liberation-serif');
-        @font-face {
-          font-family: "Intel One Mono";
-          src: url(/static/ttf/IntelOneMono-Regular.ttf);
-          font-weight: regular;
-        }
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/ttf/IntelOneMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/static/ttf/IntelOneMono-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/static/ttf/IntelOneMono-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/static/ttf/IntelOneMono-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/ttf/IntelOneMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/static/ttf/IntelOneMono-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/static/ttf/IntelOneMono-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  font-style: italic;
+  font-weight: 300;
+  src: url('/static/ttf/IntelOneMono-LightItalic.ttf') format('truetype');
+}
         |]
     H.script ! src "https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries" $ ""
     H.script
