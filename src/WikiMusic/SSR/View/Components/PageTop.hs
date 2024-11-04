@@ -57,7 +57,7 @@ myNav vv = do
       languageMenu vv
   hr
   where
-    navLinkClass = ["text-lg", "font-bold", if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"]
+    navLinkClass = ["text-lg", "font-bold", if vv ^. #uiMode % #value == "dark" then "text-stone-200" else "text-stone-700"]
 
 userPrefs :: ViewVars -> Html
 userPrefs vv = do
@@ -123,7 +123,7 @@ topTitle vv = do
             "font-bold",
             "font-mono",
             "italic",
-            if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"
+            if vv ^. #uiMode % #value == "dark" then "text-stone-200" else "text-stone-800"
           ]
         $ text ((^. #titles % #wikimusicSSR) |##| (vv ^. #language))
       em
@@ -132,6 +132,6 @@ topTitle vv = do
             "font-light",
             "font-mono",
             "italic",
-            if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"
+            if vv ^. #uiMode % #value == "dark" then "text-stone-200" else "text-stone-800"
           ]
         $ text ((^. #slogans % #pageTop) |##| (vv ^. #language))
