@@ -16,7 +16,7 @@ detailListEntry' vv isMono key val =
         "font-mono"
       ]
     $ do
-      (dt ! css' ["text-sm", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700"]) . text $ key
+      (dt ! css' ["text-sm", "font-bold", if vv ^. #uiMode % #value == "dark" then "text-stone-300" else "text-stone-700"]) . text $ key
       dd ! css' ["text-sm", "break-all", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700", if isMono then "font-mono" else "font-mono"] $ val
 
 detailListEntry :: ViewVars -> Text -> Html -> Html
