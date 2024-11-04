@@ -43,7 +43,7 @@ cssSubmitButton =
       "px-5",
       "py-2.5",
       "text-center",
-      "font-sans",
+      "font-mono",
       "w-fit"
     ]
 
@@ -60,7 +60,7 @@ cssButton vv =
       "text-md",
       "px-5",
       "py-2.5",
-      "font-sans",
+      "font-mono",
       "w-fit",
       "border",
       "border-" <> vv ^. #palette % #value <> "-500/40",
@@ -82,7 +82,7 @@ cssSelect vv =
       "px-8",
       "cursor-pointer",
       "py-2",
-      "font-sans",
+      "font-mono",
       "w-fit",
       "h-fit",
       "border-" <> vv ^. #palette % #value <> "-400/40"
@@ -92,7 +92,7 @@ cssCenteredCardGrid :: Set Text
 cssCenteredCardGrid = fromList ["flex", "flex-row", "flex-wrap", "gap-4", "justify-center", "align-center"]
 
 cssInput :: Set Text
-cssInput = fromList ["rounded-2xl", "px-5", "py-2.5", "font-sans", "w-full", "bg-white/40"]
+cssInput = fromList ["rounded-2xl", "px-5", "py-2.5", "font-mono", "w-full", "bg-white/40"]
 
 cssTextarea :: Set Text
 cssTextarea = fromList ["rounded-2xl", "px-5", "py-2.5", "w-full", "h-fit", "min-h-72", "bg-white/40"]

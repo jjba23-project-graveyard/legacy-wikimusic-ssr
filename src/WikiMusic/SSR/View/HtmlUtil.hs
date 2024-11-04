@@ -60,7 +60,7 @@ simplePage env vv title' body' = do
     bodyWithFooter vv $ do
       sharedPageTop Nothing vv
       (H.div ! css' ["text-center", "my-4"]) $ do
-        (H.h2 ! css' ["text-xl", "text-slate-600", "font-sans", "font-bold"]) . text $ title' ^. #value
+        (H.h2 ! css' ["text-xl", "text-slate-600", "font-mono", "font-bold"]) . text $ title' ^. #value
       body'
 
 paginationOffsetJS :: Text -> Text -> Text

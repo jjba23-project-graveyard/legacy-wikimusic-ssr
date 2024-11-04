@@ -83,7 +83,7 @@ optionalFileInput name' displayLabel =
   H.div $ do
     H.div $ H.label ! A.for name'' $ text displayLabel
     H.input
-      ! class_ "rounded-2xl px-10 py-6 font-sans"
+      ! class_ "rounded-2xl px-10 py-6 font-mono"
       ! A.name name''
       ! A.id name''
       ! type_ "file"
@@ -101,7 +101,7 @@ formInput name' displayLabel isRequired type' content' = H.div $ do
 
 formArea :: Text -> Maybe Text -> Bool -> Bool -> AttributeValue -> Maybe Text -> Html
 formArea name' displayLabel isRequired isMono type' content' = do
-  let optionalMonoCss = fromList [if isMono then "font-mono" else "font-sans"] :: Set Text
+  let optionalMonoCss = fromList [if isMono then "font-mono" else "font-mono"] :: Set Text
 
   H.div $ do
     H.div $ do

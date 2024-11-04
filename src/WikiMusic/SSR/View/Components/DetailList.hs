@@ -13,11 +13,11 @@ detailListEntry' vv isMono key val =
         "flex-row",
         "gap-4",
         "w-fit",
-        "font-sans"
+        "font-mono"
       ]
     $ do
       (dt ! css' ["text-sm", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700"]) . text $ key
-      dd ! css' ["text-sm", "break-all", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700", if isMono then "font-mono" else "font-sans"] $ val
+      dd ! css' ["text-sm", "break-all", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700", if isMono then "font-mono" else "font-mono"] $ val
 
 detailListEntry :: ViewVars -> Text -> Html -> Html
 detailListEntry vv = detailListEntry' vv False
