@@ -11,7 +11,7 @@ import Text.Blaze.Html5 as H
 import Text.Blaze.Html5.Attributes as A
 
 simpleFooter :: ViewVars -> Html
-simpleFooter vv = H.footer ! css' ["flex", "flex-col", "justify-center", "gap-4", "align-center", "text-center", "py-6"] $ do
+simpleFooter vv = H.footer ! css' ["flex", "flex-col", "justify-center", "gap-4", "align-center", "text-center", "py-6", "font-mono"] $ do
   (small ! css' ["italic", if vv ^. #uiMode % #value == "dark" then "text-gray-400" else "text-gray-700"]) . text $ ((^. #more % #copyright0) |##| (vv ^. #language))
   a
     ! css (cssLink vv)

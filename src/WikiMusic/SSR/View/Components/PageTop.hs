@@ -20,7 +20,7 @@ sharedPageTop title' vv = do
 maybeTitle :: Maybe Text -> Html
 maybeTitle =
   mapM_
-    ( (h2 ! css' ["text-2xl", "text-grey-600"])
+    ( (h2 ! css' ["text-2xl", "text-grey-600", "font-mono"])
         . text
     )
 
@@ -48,7 +48,7 @@ myNav :: ViewVars -> Html
 myNav vv = do
   hr
   nav ! css' ["flex", "flex-row", "flex-wrap", "gap-8", "py-4", "justify-center"] $ do
-    H.div ! css' ["flex", "flex-wrap", "flex-row", "justify-center", "gap-8", "items-center"] $ do
+    H.div ! css' ["flex", "flex-wrap", "flex-row", "justify-center", "gap-8", "items-center", "font-mono"] $ do
       a ! css' navLinkClass ! href "/songs" $ text ((^. #more % #songsNav) |##| (vv ^. #language))
       a ! css' navLinkClass ! href "/artists" $ text ((^. #more % #artistsNav) |##| (vv ^. #language))
       a ! css' navLinkClass ! href "/genres" $ text ((^. #more % #genresNav) |##| (vv ^. #language))
@@ -121,6 +121,7 @@ topTitle vv = do
         ! css'
           [ "text-xl",
             "font-bold",
+            "font-mono",
             "italic",
             if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"
           ]
@@ -129,6 +130,7 @@ topTitle vv = do
         ! css'
           [ "text-xl",
             "font-light",
+            "font-mono",
             "italic",
             if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"
           ]
