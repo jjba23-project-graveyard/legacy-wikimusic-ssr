@@ -5,27 +5,27 @@
 
 packages:
 - completed:
-    commit: cec8e5e9d9c92c994c293cd865b01daabaab7f0a
-    git: https://github.com/jjba23/wikimusic-model-hs.git
+    commit: 722c3d1f8acec136fc14340c7f855aeb0143a530
+    git: https://codeberg.org/jjba23/wikimusic-model-hs.git
     name: wikimusic-model-hs
     pantry-tree:
-      sha256: 00da4309b7eb47ccc8b7ca2e1e5373fe90092f1189123d5fe2d48107f54a0a54
-      size: 1821
-    version: 1.2.0.3
+      sha256: cf6639cd633a0bb9a95e141210465c9392e1e0c16344be6898d1e68a594759f2
+      size: 1768
+    version: 1.2.0.4
   original:
-    commit: cec8e5e9d9c92c994c293cd865b01daabaab7f0a
-    git: https://github.com/jjba23/wikimusic-model-hs.git
+    commit: 722c3d1f8acec136fc14340c7f855aeb0143a530
+    git: https://codeberg.org/jjba23/wikimusic-model-hs.git
 - completed:
-    commit: 77029fdec26c797aed0e4cc85281699924a042c6
-    git: https://github.com/jjba23/keuringsdienst.git
+    commit: 1a8420fc428f8f0c4d7170c337d19799cc558cb7
+    git: https://codeberg.org/jjba23/keuringsdienst.git
     name: keuringsdienst
     pantry-tree:
-      sha256: 13fb1ad89c7102fc15298e7360926cb72cb5a142b0351809b1d135ff08952265
-      size: 1003
-    version: 1.0.0.12
+      sha256: ee906a98c75a31dfa936fc08deb315362512e5ad9e5bf8aba07e4c8507853f7b
+      size: 950
+    version: 1.0.2.2
   original:
-    commit: 77029fdec26c797aed0e4cc85281699924a042c6
-    git: https://github.com/jjba23/keuringsdienst.git
+    commit: 1a8420fc428f8f0c4d7170c337d19799cc558cb7
+    git: https://codeberg.org/jjba23/keuringsdienst.git
 - completed:
     hackage: tomland-1.3.3.3@sha256:877635f30fc7eeebc7b79283baeec1b7904365973cc3fd98c86f9d147eeef575,9147
     pantry-tree:
@@ -41,27 +41,27 @@ packages:
   original:
     hackage: validation-selective-0.2.0.0@sha256:cc847f1a110e3b1bd437a5356f115881b61cafcb11781b570b180efd88bf0907,3917
 - completed:
-    commit: 18d217579b901411fa51921463353864c448f48b
-    git: https://github.com/jjba23/wikimusic-api-spec.git
+    commit: d9ed3801c42330f8b5f96fea6b6196a01790261d
+    git: https://codeberg.org/jjba23/wikimusic-api-spec.git
     name: wikimusic-api-spec
     pantry-tree:
-      sha256: bdace8ffe3b1890f00111606a50975cb8705c3082f17aceaf206158a463b7c10
-      size: 702
-    version: 1.2.1.2
+      sha256: a752b79cb3427002b81eb541f8490f548e88893882de92fbb6f6c9d9363ef0af
+      size: 748
+    version: 1.2.1.3
   original:
-    commit: 18d217579b901411fa51921463353864c448f48b
-    git: https://github.com/jjba23/wikimusic-api-spec.git
+    commit: d9ed3801c42330f8b5f96fea6b6196a01790261d
+    git: https://codeberg.org/jjba23/wikimusic-api-spec.git
 - completed:
-    commit: 1d97a5b112ba0184cbb08d6bc37f49f5acdfdb48
-    git: https://github.com/jjba23/free-alacarte.git
+    commit: 4ec2a453c90b0fc86dce46008effc3ea20466375
+    git: https://codeberg.org/jjba23/free-alacarte.git
     name: free-alacarte
     pantry-tree:
-      sha256: 19230c2fd41cb50b4ba1ce2389812af68d0e3bac1135e7d4da2b247b229654b4
-      size: 583
-    version: 1.0.0.4
+      sha256: ab290737f6524615e87973879c97ae1740cc8ca652f7f4ee75a6b21ccd62a76b
+      size: 1050
+    version: 1.0.0.9
   original:
-    commit: 1d97a5b112ba0184cbb08d6bc37f49f5acdfdb48
-    git: https://github.com/jjba23/free-alacarte.git
+    commit: 4ec2a453c90b0fc86dce46008effc3ea20466375
+    git: https://codeberg.org/jjba23/free-alacarte.git
 snapshots:
 - completed:
     sha256: edbd50d7e7c85c13ad5f5835ae2db92fab1e9cf05ecf85340e2622ec0a303df1

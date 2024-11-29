@@ -34,17 +34,16 @@ packages:
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
 extra-deps:
-  - git: https://github.com/jjba23/wikimusic-model-hs.git
-    commit: cec8e5e9d9c92c994c293cd865b01daabaab7f0a
-  - git: https://github.com/jjba23/keuringsdienst.git
-    commit: 77029fdec26c797aed0e4cc85281699924a042c6
+  - git: https://codeberg.org/jjba23/wikimusic-model-hs.git
+    commit: 722c3d1f8acec136fc14340c7f855aeb0143a530
+  - git: https://codeberg.org/jjba23/keuringsdienst.git
+    commit: 1a8420fc428f8f0c4d7170c337d19799cc558cb7
   - tomland-1.3.3.3@sha256:877635f30fc7eeebc7b79283baeec1b7904365973cc3fd98c86f9d147eeef575,9147
   - validation-selective-0.2.0.0@sha256:cc847f1a110e3b1bd437a5356f115881b61cafcb11781b570b180efd88bf0907,3917
-  - git: https://github.com/jjba23/wikimusic-api-spec.git
-    commit: 18d217579b901411fa51921463353864c448f48b
-  - git: https://github.com/jjba23/free-alacarte.git
-    commit: 1d97a5b112ba0184cbb08d6bc37f49f5acdfdb48
-    
+  - git: https://codeberg.org/jjba23/wikimusic-api-spec.git
+    commit: d9ed3801c42330f8b5f96fea6b6196a01790261d
+  - git: https://codeberg.org/jjba23/free-alacarte.git
+    commit: 4ec2a453c90b0fc86dce46008effc3ea20466375    
 
 nix:
   enable: true

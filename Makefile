@@ -4,30 +4,14 @@ fmt:
 	find . -name '*.hs' -type f -exec ormolu --mode inplace {} \;
 	find . -name '*.nix' -exec nixfmt {} \;
 	-statix check
-	-deadnix -f	
-ghcid-dev:
-	ghcid --warnings --restart=./wikimusic-ssr.cabal --test "WikiMusic.SSR.Boot.boot"
+	-deadnix -f
 dev: fmt
-	make ghcid-dev
+	ghcid --warnings --restart=./wikimusic-api.cabal --test "WikiMusic.SSR.Boot.boot"
 server:
 	stack --nix run -- "./resources/config/run-production.toml"
-# watchexec -r -e css "make ghcid-dev" ?????
-test:
-	nix run .#test
-push-cache:
-	nix path-info --recursive | cachix push wikimusic-ssr
-	nix flake --extra-experimental-features 'nix-command flakes' \
-		--accept-flake-config archive --json | jq --raw-output '.path, (.inputs | to_entries [] .value.path)' | cachix push wikimusic-ssr
-push-cache-arm:
-	nix --system aarch64-linux path-info --recursive | cachix push wikimusic-ssr
-	nix --system aarch64-linux flake --extra-experimental-features 'nix-command flakes' \
-		--accept-flake-config archive --json | jq --raw-output '.path, (.inputs | to_entries [] .value.path)' | cachix push wikimusic-ssr
-
-cabal-release:
-	cabal sdist -o .
-
-build:
-	nix build --extra-experimental-features 'nix-command flakes' --accept-flake-config --system x86_64-linux
-build-arm:
-	nix build --extra-experimental-features 'nix-command flakes' --accept-flake-config --system aarch64-linux
-
+test: fmt
+	LANG=C.UTF-8 stack --nix test
+build: fmt
+	LANG=C.UTF-8 stack --nix build
+release:
+	LANG=C.UTF-8 stack --nix sdist .
