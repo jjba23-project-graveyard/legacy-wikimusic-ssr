@@ -112,7 +112,7 @@ cssDetails vv =
     ]
 
 cssSummary :: Set Text
-cssSummary = fromList ["text-xl", "font-bold", "cursor-pointer"]
+cssSummary = fromList ["text-xl", "font-bold", "cursor-pointer", "my-6"]
 
 cssLink :: ViewVars -> Set Text
 cssLink vv = fromList ["text-" <> vv ^. #palette % #value <> "-500", "font-bold", "font-mono", "cursor-pointer"]

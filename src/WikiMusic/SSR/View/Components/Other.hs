@@ -39,8 +39,7 @@ mkIdentifierHref path identifier = fromString ("/" <> unpackText path <> "/" <> 
 -- use dark: in tailwind to use system dark / light mode, or use vv to read from cookie
 simpleEntityCard vv path entity = article
   ! css'
-    [ "bg-slate-100",
-      "rounded-2xl",
+    [ "rounded-2xl",
       "flex",
       "flex-wrap",
       "gap-4",
@@ -48,7 +47,7 @@ simpleEntityCard vv path entity = article
       "md:flex-col",
       "max-w-56",
       "border",
-      if vv ^. #uiMode % #value == "dark" then "dark:bg-black/70" else "bg-white/80",
+      if vv ^. #uiMode % #value == "dark" then "dark:bg-black/80" else "bg-white/80",
       "border-" <> vv ^. #palette % #value <> "-300/50"
     ]
   $ do
@@ -56,7 +55,7 @@ simpleEntityCard vv path entity = article
     H.div ! css' ["px-4", "py-4", "flex", "flex-col", "gap-4", "align-center"] $ do
       a
         ! href (mkIdentifierHref path (entity ^. #identifier))
-        $ (h3 ! css' ["text-xl", "font-bold", "break-words", "text-center", if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"])
+        $ (h3 ! css' ["text-xl", "font-bold", "break-words", "font-mono", "text-center", if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"])
         . text
         $ entity
         ^. #displayName
@@ -133,6 +132,7 @@ slot1 vv path x = section
           [ "text-3xl",
             "text-black",
             "font-bold",
+            "font-mono",
             if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"
           ]
       )

@@ -31,61 +31,63 @@ mkSharedHead _ _ pageTitle = do
         @import url('https://fonts.cdnfonts.com/css/liberation-sans');
         @import url('https://fonts.cdnfonts.com/css/liberation-serif');
 
+/* Font setup */
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/ttf/IntelOneMono-Regular.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/woff/MonaspaceNeon-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/static/ttf/IntelOneMono-Italic.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/static/woff/MonaspaceNeon-Italic.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/static/ttf/IntelOneMono-Medium.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/static/woff/MonaspaceNeon-Medium.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: italic;
-  font-weight: 500;
-  src: url('/static/ttf/IntelOneMono-MediumItalic.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: italic;
+    font-weight: 500;
+    src: url('/static/woff/MonaspaceNeon-MediumItalic.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/static/ttf/IntelOneMono-Bold.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/woff/MonaspaceNeon-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: italic;
-  font-weight: 700;
-  src: url('/static/ttf/IntelOneMono-BoldItalic.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/static/woff/MonaspaceNeon-BoldItalic.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/static/ttf/IntelOneMono-Light.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/static/woff/MonaspaceNeon-Light.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Intel One Mono';
-  font-style: italic;
-  font-weight: 300;
-  src: url('/static/ttf/IntelOneMono-LightItalic.ttf') format('truetype');
+    font-family: 'Monaspace Neon';
+    font-style: italic;
+    font-weight: 300;
+    src: url('/static/woff/MonaspaceNeon-LightItalic.woff') format('woff');
 }
+
         |]
     H.script ! src "https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries" $ ""
     H.script
@@ -97,7 +99,7 @@ mkSharedHead _ _ pageTitle = do
           fontFamily: {
             sans: ['Liberation Sans', 'sans-serif'],
             serif: ['Liberation Serif', 'serif'],
-            mono: ['Intel One Mono', 'monospace']
+            mono: ['Monaspace Neon', 'monospace']
           },
         }
       }                              

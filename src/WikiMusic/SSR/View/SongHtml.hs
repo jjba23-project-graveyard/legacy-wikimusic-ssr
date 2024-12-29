@@ -47,7 +47,7 @@ songDetailPage' env vv x = do
     entityDetails vv "songs" x
     songDetails vv x
     H.form ! css' ["flex", "flex-row", "flex-wrap", "justify-center", "gap-4", "items-center"] ! action "/user-preferences/song-ascii-size" ! method "POST" ! enctype "multipart/form-data" $ do
-      H.label ! for "song-ascii-size" $ "ascii size:"
+      H.label ! css' [if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black", "font-mono"] ! for "song-ascii-size" $ "ascii size:"
       select ! css (cssSelect vv) ! onchange "this.form.submit()" ! type_ "checkbox" ! name "song-ascii-size" ! A.id "song-ascii-size" $ do
         mapM_
           ( \(size', sizeName) ->
@@ -64,7 +64,7 @@ songDetailPage' env vv x = do
 
 songDetails :: ViewVars -> Song -> Html
 songDetails vv x = do
-  section $ detailList $ do
+  section ! css' ["mx-12", "my-6"] $ detailList $ do
     mapM_
       (monoDetailListEntry vv ((^. #more % #musicTuning) |##| (vv ^. #language)) . text)
       (x ^. #musicTuning)
@@ -85,7 +85,7 @@ mkVersion :: ViewVars -> SongContent -> Html
 mkVersion vv v = do
   hr
   H.article ! css' ["my-6"] $ do
-    (h3 ! css' ["text-xl", "font-bold"]) . text $ (v ^. #versionName) <> " " <> (v ^. #instrumentType)
+    (h3 ! css' ["text-2xl", "my-6", "font-bold", "font-mono", if vv ^. #uiMode % #value == "dark" then "text-white" else "text-black"]) . text $ (v ^. #versionName) <> " " <> (v ^. #instrumentType)
 
     detailList $ do
       mapM_
