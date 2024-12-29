@@ -3,7 +3,7 @@
 
 Server side rendered (SSR) frontend for WikiMusic
 
-Visit my instance at wikimusic.jointhefreeworld.org
+Visit my instance at https://wikimusic.jointhefreeworld.org
 
 WikiMusic as a software means an ingenious combination of a server-side-rendered frontend, a powerful backend REST API, a database, and a user-interface to create a Content Management System (CMS) and a Gallery for music of all kinds, with educational intents.
 
