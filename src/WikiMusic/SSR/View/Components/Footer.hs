@@ -15,7 +15,7 @@ simpleFooter vv = H.footer ! css' ["flex", "flex-col", "justify-center", "gap-4"
   (small ! css' ["italic", if vv ^. #uiMode % #value == "dark" then "text-gray-400" else "text-gray-700"]) . text $ ((^. #more % #copyright0) |##| (vv ^. #language))
   a
     ! css (cssLink vv)
-    ! href "https://github.com/jjba23/wikimusic-ssr"
+    ! href "https://codeberg.org/jjba23/wikimusic-ssr"
     $ small
     . text
     $ ((^. #more % #copyright1) |##| (vv ^. #language))
