@@ -43,16 +43,16 @@ requiredTextInput' :: Text -> Text -> Maybe Text -> Html
 requiredTextInput' name' displayLabel = formInput name' (Just displayLabel) True "text"
 
 requiredTextArea :: Text -> Text -> Html
-requiredTextArea name' displayLabel = formArea name' (Just displayLabel) True False "text" Nothing
+requiredTextArea name' displayLabel = formArea name' (Just displayLabel) True "text" Nothing
 
 requiredTextArea' :: Text -> Text -> Maybe Text -> Html
-requiredTextArea' name' displayLabel = formArea name' (Just displayLabel) True False "text"
+requiredTextArea' name' displayLabel = formArea name' (Just displayLabel) True "text"
 
 requiredMonoArea :: Text -> Text -> Html
-requiredMonoArea name' displayLabel = formArea name' (Just displayLabel) True True "text" Nothing
+requiredMonoArea name' displayLabel = formArea name' (Just displayLabel) True "text" Nothing
 
 requiredMonoArea' :: Text -> Text -> Maybe Text -> Html
-requiredMonoArea' name' displayLabel = formArea name' (Just displayLabel) True True "text"
+requiredMonoArea' name' displayLabel = formArea name' (Just displayLabel) True "text"
 
 optionalTextInput :: Text -> Text -> Html
 optionalTextInput name' displayLabel = formInput name' (Just displayLabel) False "text" Nothing
@@ -61,16 +61,16 @@ optionalTextInput' :: Text -> Text -> Maybe Text -> Html
 optionalTextInput' name' displayLabel = formInput name' (Just displayLabel) False "text"
 
 optionalTextArea :: Text -> Text -> Html
-optionalTextArea name' displayLabel = formArea name' (Just displayLabel) False False "text" Nothing
+optionalTextArea name' displayLabel = formArea name' (Just displayLabel) False "text" Nothing
 
 optionalTextArea' :: Text -> Text -> Maybe Text -> Html
-optionalTextArea' name' displayLabel = formArea name' (Just displayLabel) False False "text"
+optionalTextArea' name' displayLabel = formArea name' (Just displayLabel) False "text"
 
 optionalMonoArea :: Text -> Text -> Html
-optionalMonoArea name' displayLabel = formArea name' (Just displayLabel) False True "text" Nothing
+optionalMonoArea name' displayLabel = formArea name' (Just displayLabel) False "text" Nothing
 
 optionalMonoArea' :: Text -> Text -> Maybe Text -> Html
-optionalMonoArea' name' displayLabel = formArea name' (Just displayLabel) False True "text"
+optionalMonoArea' name' displayLabel = formArea name' (Just displayLabel) False "text"
 
 requiredEmailInput :: Text -> Text -> Html
 requiredEmailInput name' displayLabel = formInput name' (Just displayLabel) True "email" Nothing
@@ -93,20 +93,20 @@ optionalFileInput name' displayLabel =
 formInput :: Text -> Maybe Text -> Bool -> AttributeValue -> Maybe Text -> Html
 formInput name' displayLabel isRequired type' content' = H.div $ do
   H.div $ do
-    mapM_ ((H.label ! A.for name'') . text) displayLabel
-    mapM_ (\_ -> mapM_ (H.span ! css' ["font-bold"]) (if isRequired then Just "*" else Nothing)) displayLabel
+    mapM_ ((H.label ! class_ "font-mono" ! A.for name'') . text) displayLabel
+    mapM_ (\_ -> mapM_ (H.span ! css' ["font-bold", "text-red-600", "font-mono"]) (if isRequired then Just "*" else Nothing)) displayLabel
   H.input ! css cssInput H.!? (isRequired, required "") ! A.name name'' ! A.id name'' ! type_ type' ! A.value (textToAttrValue $ fromMaybe "" content')
   where
     name'' = textToAttrValue name'
 
-formArea :: Text -> Maybe Text -> Bool -> Bool -> AttributeValue -> Maybe Text -> Html
-formArea name' displayLabel isRequired isMono type' content' = do
-  let optionalMonoCss = fromList [if isMono then "font-mono" else "font-mono"] :: Set Text
+formArea :: Text -> Maybe Text -> Bool -> AttributeValue -> Maybe Text -> Html
+formArea name' displayLabel isRequired type' content' = do
+  let optionalMonoCss = fromList ["font-mono"] :: Set Text
 
   H.div $ do
     H.div $ do
-      mapM_ ((H.label ! A.for name'') . text) displayLabel
-      mapM_ (H.span ! class_ "color-error") (if isRequired then Just "*" else Nothing)
+      mapM_ ((H.label ! class_ "font-mono" ! A.for name'') . text) displayLabel
+      mapM_ (H.span ! class_ "text-red-600 font-mono") (if isRequired then Just "*" else Nothing)
     H.textarea
       ! css (cssTextarea `setUnion` optionalMonoCss)
       H.!? (isRequired, required "")

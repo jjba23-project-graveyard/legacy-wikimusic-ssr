@@ -5,8 +5,8 @@ module WikiMusic.SSR.View.Components.DetailList where
 import Principium
 import Text.Blaze.Html5 as H
 
-detailListEntry' :: ViewVars -> Bool -> Text -> Html -> Html
-detailListEntry' vv isMono key val =
+detailListEntry' :: ViewVars -> Text -> Html -> Html
+detailListEntry' vv key val =
   H.div
     ! css'
       [ "flex",
@@ -17,13 +17,13 @@ detailListEntry' vv isMono key val =
       ]
     $ do
       (dt ! css' ["text-sm", "font-bold", if vv ^. #uiMode % #value == "dark" then "text-stone-300" else "text-stone-700"]) . text $ key
-      dd ! css' ["text-sm", "break-all", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700", if isMono then "font-mono" else "font-mono"] $ val
+      dd ! css' ["text-sm", "break-all", if vv ^. #uiMode % #value == "dark" then "text-gray-300" else "text-gray-700", "font-mono"] $ val
 
 detailListEntry :: ViewVars -> Text -> Html -> Html
-detailListEntry vv = detailListEntry' vv False
+detailListEntry = detailListEntry'
 
 monoDetailListEntry :: ViewVars -> Text -> Html -> Html
-monoDetailListEntry vv = detailListEntry' vv True
+monoDetailListEntry = detailListEntry'
 
 detailList :: Html -> Html
 detailList = dl ! css' ["flex", "flex-col", "gap-2", "justify-start"]
